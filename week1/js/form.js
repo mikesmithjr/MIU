@@ -7,12 +7,12 @@
 window.addEventListener("DOMContentLoaded", function () {
 
 	//Variable defaults
-	var treatmentTypes = ["--Choose A Treatment--", "Diet", "Pills", "Insulin"],
+	var treatmentTypes = ["--Choose A Treatment--", "Pills", "Insulin"],
 		sexValue,
-		errMsg = $("errors");
+		errMsg = ge("errors");
 
 	//getElementByID Function
-	function $(x) {
+	function ge(x) {
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	// Create Select Field element and populate
 	function makeCats() {
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $("select"),
+			selectLi = ge("select"),
 			makeSelect = document.createElement("select");
 			makeSelect.setAttribute("id", "treatments");
 		for (var i=0, j=treatmentTypes.length; i<j; i++){
@@ -47,17 +47,17 @@ window.addEventListener("DOMContentLoaded", function () {
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$("logEntryForm").style.display = "none";
-				$("clear").style.display = "inline";
-				$("displayLog").style.display = "none";
-				$("addNew").style.display = "inline";
+				ge("logEntryForm").style.display = "none";
+				ge("clear").style.display = "inline";
+				ge("displayLog").style.display = "none";
+				ge("addNew").style.display = "inline";
 				break;
 			case "off":
-				$("logEntryForm").style.display = "block";
-				$("clear").style.display = "inline";
-				$("displayLog").style.display = "inline";
-				$("addNew").style.display = "none";
-				$("logItems").style.display = "none";
+				ge("logEntryForm").style.display = "block";
+				ge("clear").style.display = "inline";
+				ge("displayLog").style.display = "inline";
+				ge("addNew").style.display = "none";
+				ge("logItems").style.display = "none";
 				break;
 			default:
 				return false;
@@ -78,15 +78,15 @@ window.addEventListener("DOMContentLoaded", function () {
 		//Object properties contain array with form label and input value.
 		getSelectedRadio();
 		var logItem = {};
-			logItem.fname = ["First Name:", $("fname").value];
-			logItem.lname = ["Last Name:", $("lname").value];
-			logItem.date = ["Today's Date:", $("date").value];
-			logItem.currentTime = ["Current Time:", $("currentTime").value];
-			logItem.bsreading = ["Blood Sugar Reading:", $("bsreading").value];
+			logItem.fname = ["First Name:", ge("fname").value];
+			logItem.lname = ["Last Name:", ge("lname").value];
+			logItem.date = ["Today's Date:", ge("date").value];
+			logItem.currentTime = ["Current Time:", ge("currentTime").value];
+			logItem.bsreading = ["Blood Sugar Reading:", ge("bsreading").value];
 			logItem.sex = ["Male or Female:", sexValue];
-			logItem.condition = ["Condition:", $("condition").value];
-			logItem.treatments = ["Current Treatment:", $("treatments").value];
-			logItem.comments = ["Comments:", $("comments").value];
+			logItem.condition = ["Condition:", ge("condition").value];
+			logItem.treatments = ["Current Treatment:", ge("treatments").value];
+			logItem.comments = ["Comments:", ge("comments").value];
 		//Saving data into local storage using Stringify
 		localStorage.setItem(id, JSON.stringify(logItem));
 		alert("Log Saved!");
@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		makeList.setAttribute("id", "logEntry");
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$("logItems").style.display = "block";
+		ge("logItems").style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement("li");
 			makeli.setAttribute("id", "logItem");
@@ -188,11 +188,11 @@ window.addEventListener("DOMContentLoaded", function () {
 		toggleControls("off");
 
 		//Populate the form with current local storage values.
-		$("fname").value = logItem.fname[1];
-		$("lname").value = logItem.lname[1];
-		$("date").value = logItem.date[1];
-		$("currentTime").value = logItem.currentTime[1];
-		$("bsreading").value = logItem.bsreading[1];
+		ge("fname").value = logItem.fname[1];
+		ge("lname").value = logItem.lname[1];
+		ge("date").value = logItem.date[1];
+		ge("currentTime").value = logItem.currentTime[1];
+		ge("bsreading").value = logItem.bsreading[1];
 		var radios = document.forms[0].sex;
 		for(var i=0; i<radios.length; i++) {
 			if(radios[i].value == "Male" && logItem.sex[1] == "Male"){
@@ -201,15 +201,15 @@ window.addEventListener("DOMContentLoaded", function () {
 				radios[i].setAttribute("checked", "checked");
 			}
 		}
-		$("condition").value = logItem.condition[1];
-		$("treatments").value = logItem.treatments[1];
-		$("comments").value = logItem.comments[1];
+		ge("condition").value = logItem.condition[1];
+		ge("treatments").value = logItem.treatments[1];
+		ge("comments").value = logItem.comments[1];
 
 		//remove initial listener from the input "save log item" button
 		submitLink.removeEventListener("click", storeData);
 		//Change submit button value to edit button
-		$("submit").value = "Edit Log Entry";
-		var editSubmit = $("submit");
+		ge("submit").value = "Edit Log Entry";
+		var editSubmit = ge("submit");
 		//Save the key value established in this vunction as a property of the editSubmit event
 		//so we can use that value when we save the data
 		editSubmit.addEventListener("click", validate);
@@ -239,11 +239,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	function validate(e){
 		//define elements to check
-		var getFname = $("fname");
-		var getLname = $("lname");
-		var getDate = $("date");
-		var getCurrentTime = $("currentTime");
-		var getBsreading = $("bsreading");
+		var getFname = ge("fname");
+		var getLname = ge("lname");
+		var getDate = ge("date");
+		var getCurrentTime = ge("currentTime");
+		var getBsreading = ge("bsreading");
 		
 		// Reset Error Message
 		errMsg.innerHTML = "";
@@ -313,11 +313,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 	//Set Link and Submint Click Events
-	var displayLink = $("displayLog");
+	var displayLink = ge("displayLog");
 	displayLink.addEventListener("click", getData);
-	var clearLink = $("clear");
+	var clearLink = ge("clear");
 	clearLink.addEventListener("click", clearData);
-	var submitLink = $("submit");
+	var submitLink = ge("submit");
 	submitLink.addEventListener("click", validate);
 	
 
