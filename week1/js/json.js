@@ -61,7 +61,7 @@ var json = {
 		"condition": ["Condition:", "10"],
 		"treatments": ["Current Treatment:", "Pills"],
 		"comments":	["Comments:", "Feeling Awesome!!"]
-	}
+	},
 	"logItem6": {
 		"fname": ["First Name:", "Mike"],
 		"lname": ["Last Name:", "Smith"],
@@ -119,7 +119,7 @@ var json = {
 		"condition": ["Condition:", "10"],
 		"treatments": ["Current Treatment:", "Pills"],
 		"comments":	["Comments:", "Feeling Awesome!!"]
-	}
+	},
 	
 	"logItem11": {
 		"fname": ["First Name:", "Mike"],
@@ -178,7 +178,7 @@ var json = {
 		"condition": ["Condition:", "10"],
 		"treatments": ["Current Treatment:", "Pills"],
 		"comments":	["Comments:", "Feeling Awesome!!"]
-	}
+	},
 	
 	"logItem16": {
 		"fname": ["First Name:", "Mike"],
