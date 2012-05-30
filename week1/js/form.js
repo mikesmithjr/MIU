@@ -1,4 +1,4 @@
-//Project 4 Visual Frameworks Term 1205
+//Project 1 MIU Term 1206
 //Michael Smith Jr.
 //The Diabetic Blood Sugar Log
 
@@ -7,7 +7,7 @@
 window.addEventListener("DOMContentLoaded", function () {
 
 	//Variable defaults
-	var treatmentTypes = ["--Choose A Treatment--", "Pills", "Insulin"],
+	var treatmentTypes = ["--Choose A Treatment--", "Diet", "Pills", "Insulin"],
 		sexValue,
 		errMsg = $("errors");
 
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 
-
+	//Switch the form on screen from input form to display log
 	function toggleControls(n){
 		switch(n){
 			case "on":
@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				return false;
 		}
 	}
-
+	//Store form data to local storage
 	function storeData(key){
 		//if there is no key , this is a new item and needs a key
 		if(!key){
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		localStorage.setItem(id, JSON.stringify(logItem));
 		alert("Log Saved!");
 	}
-
+	//Display the data from local storage to screen
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
@@ -306,10 +306,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	}
 	
 	
-	/*function showValue(newValue){
-			$("range").innerHTML=newValue;
-		}*/
-
+	
 
 	
 	makeCats();
@@ -322,8 +319,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	clearLink.addEventListener("click", clearData);
 	var submitLink = $("submit");
 	submitLink.addEventListener("click", validate);
-	/*var displayRange = $("condition");
-	displayRange.addEventListener("onchange", showValue);*/
+	
 
 
 
