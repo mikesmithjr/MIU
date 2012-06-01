@@ -5,7 +5,21 @@ The Diabetic Blood Sugar Log
 */
 
 
-
+.button{
+	width: 200px; height: 44px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: 0 2px 3px #000;
+	text-align: center;
+	background: #f3e2c7; /* Old browsers */
+	background: -moz-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e2c7), color-stop(50%,#c19e67), color-stop(51%,#b68d4c), color-stop(100%,#e9d4b3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* IE10+ */
+	background: linear-gradient(top, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+}
 a:hover{color:green; outline: 1px dotted red;}
 
 body{
@@ -14,7 +28,7 @@ body{
 
 
 
-h1{
+/*h1{
 	background: tan;
 	color: white;
 	padding: 20px;
@@ -26,7 +40,7 @@ h1{
 	text-shadow: 1px 1px black;
 	text-align: center;
 	
-}
+}*/
 
 #questions{
 	background: lightblue;
@@ -83,3 +97,4 @@ nav{
 	border: 1px solid black;
 	text-align: center;
 }
+
