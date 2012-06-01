@@ -14,7 +14,7 @@ body{
 
 
 
-h1{
+/*h1{
 	background: tan;
 	color: white;
 	padding: 20px;
@@ -26,7 +26,7 @@ h1{
 	text-shadow: 1px 1px black;
 	text-align: center;
 	
-}
+}*/
 
 #questions{
 	background: lightblue;
@@ -83,3 +83,4 @@ nav{
 	border: 1px solid black;
 	text-align: center;
 }
+
