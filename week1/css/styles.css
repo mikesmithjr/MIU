@@ -32,7 +32,18 @@ background: -ms-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 
 background: linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 ); /* IE6-9 */
 }
-
+.titled{
+	background: tan;
+	color: white;
+	padding-left: 10px;
+	border: 1px solid black;
+	border-radius: 15px;
+	font-weight: bold;
+	font-size: 15px;
+	font-family: Helvetica, sans-serif;
+	
+	
+}
 /*h1{
 	background: tan;
 	color: white;
@@ -46,7 +57,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 	text-align: center;
 	
 }*/
-
+h2{
+	font-weight: bold;
+	font-size: 25px;
+	font-family: Helvetica, sans-serif;
+	text-shadow: 1px 1px black;
+}
 #questions{
 	background: lightblue;
 	list-style: none;
