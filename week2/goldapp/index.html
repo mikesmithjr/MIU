@@ -27,7 +27,9 @@
 		<title>The Diabetic Blood Sugar Log</title>
 
 		<!-- Link CSS -->
-		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/styles.css" />-->
+
 		<!--Modernizr JavaScript Template-->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 		
@@ -35,38 +37,46 @@
 	</head>
 	<body>
 		<!-- Page Content Lives here. -->
-		<header>
-			<h1>
-			<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
-			</h1>
-		</header>
-		<p id= "brief"> This application will be a simple log for all the diabetics out there to track their readings.</p>
-		<form id="search" method="get">
-			<input type="search" id="search" name="search" placeholder="Search Log">
-			<input type="submit" value="Search">
-		</form>
-		<div class= "feature">
-			<a href='additem.html' align= "center" title="Add Log Item"><img src= "images/NewLogItem.jpg"></a>
-		</div>
-		<div class= "button">
-				<!--<a href='dust.html' id="displayLog"><img src= "images/Browselogbutton.jpg"></a>-->
-				<a href='dust.html' id="displayLog" style="text-decoration: none; color: #000">Browse Log</a>
-			</div>
-		<div class= "titled">
-			<h2>Useful Links</h2>
-				<ul>
-					<li><a href='http://www.diabetes.org' title="American Diabetes Association">American Diabetes Association</a></li>
-					<br/>
-					<li><a href='http://www.diabetesselfmanagement.com' title="Diabetes Self-Management">Diabetes Self-Management</a></li>
-					<br/>
-					<li><a href='http://www.ndei.org' title="National Diabetes Education Initiative">National Diabetes Education Initiative</a></li>
-				</ul>	
 
+		<div data-role="page">
+			<div data-role="header" data-position="fixed">
+				<h1>The Diabetic Blood Sugar Log</h1>
+			</div>
+			
+			<div data-role="content">
+
+				<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
+				<p id= "brief"> This application will be a simple log for all the diabetics out there to track their readings.</p>
+				<form id="search" method="get">
+					<input type="search" id="search" name="search" placeholder="Search Log">
+					<input type="submit" value="Search">
+				</form>
+				<div class= "feature">
+					<a href='additem.html' data-ajax="false" align= "center" title="Add Log Item"><img src= "images/NewLogItem.jpg"></a>
+				</div>
+				<div>
+						<a href='dust.html' data-role="button" data-theme="b" id="displayLog">Browse Log</a>
+					</div>
+				<div>
+					<h2>Useful Links</h2>
+						<ul data-role="listview" data-inset="true" data-filter="true">
+							<li><a href='http://www.diabetes.org' title="American Diabetes Association">American Diabetes Association</a></li>
+							<br/>
+							<li><a href='http://www.diabetesselfmanagement.com' title="Diabetes Self-Management">Diabetes Self-Management</a></li>
+							<br/>
+							<li><a href='http://www.ndei.org' title="National Diabetes Education Initiative">National Diabetes Education Initiative</a></li>
+						</ul>	
+
+				</div>
+			</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>Footer</h4>			
 		</div>
-		<footer>
-						
-		</footer>
-		
+	</div>
+
+
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
 		<script type="text/javascript" src="js/form.js"></script>
 
