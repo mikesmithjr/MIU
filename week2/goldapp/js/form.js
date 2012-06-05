@@ -1,4 +1,4 @@
-//Project 2 Bronze MIU Term 1206
+//Project 2 Gold MIU Term 1206
 //Michael Smith Jr.
 //The Diabetic Blood Sugar Log
 
