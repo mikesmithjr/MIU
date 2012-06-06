@@ -9,6 +9,9 @@ The Diabetic Blood Sugar Log
 
 /*a:hover{color:green; outline: 1px dotted red;}*/
 
+body{
+	background: lightblue;
+}
 .ui-page{
 	background: lightblue;
 }
