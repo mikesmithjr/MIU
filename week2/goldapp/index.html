@@ -28,7 +28,7 @@
 
 		<!-- Link CSS -->
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<!--<link rel="stylesheet" type="text/css" href="css/styles.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 
 		<!--Modernizr JavaScript Template-->
 		<script src="js/libs/modernizr.custom.min.js"></script>
@@ -45,9 +45,11 @@
 			
 			<div data-role="content">
 
-				<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
-				<p id= "brief"> This application will be a simple log for all the diabetics out there to track their readings.</p>
-				
+				<div class= "feature">
+					<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
+
+					<p id= "brief"> This application will be a simple log for all the diabetics out there to track their readings.</p>
+				</div>	
 				<div class= "feature">
 					<a href='additem.html' data-ajax="false" align= "center" title="Add Log Item"><img src= "images/NewLogItem.jpg"></a>
 				</div>
@@ -78,8 +80,10 @@
 			</div>
 			
 			<div data-role="content">
-
-				<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
+				
+				<div class= "feature">
+					<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
+				</div>
 
 				<div>
 					<h2>Useful Links</h2>
@@ -109,8 +113,13 @@
 			
 				
 				<div data-role="content">
-					<div data-role="collapsible-set">
+				
+				<div class= "feature">
 					<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
+				</div>
+
+
+					<div data-role="collapsible-set">
 					
 						<div data-role="collapsible" data-collapsed="true" data-theme="b">
 							<h3>Doctor's Info</h3>
@@ -147,9 +156,11 @@
 			
 				
 				<div data-role="content">
-
+				
+				<div class= "feature">
 					<a href='index.html' title="Home"><img src= "images/smallLogo.jpg"></a>
-					
+				</div>
+
 					<div data-role="collapsible" data-collapsed="true" data-theme="b">
 						<h3>Doctor's Info</h3>
 						<p>Bent Tree Physicians</p>
