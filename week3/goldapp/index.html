@@ -371,7 +371,7 @@
 
 						<div data-role="fieldcontain">
 							<label>Last Name:</label>
-							<input type="text" name="lname" id="lname" />
+							<input type="text" name="lname" id="lname" class="required"/>
 						</div>
 
 						<div data-role="fieldcontain">
@@ -382,18 +382,18 @@
 
 						<div data-role="fieldcontain">
 							<label>Today's Date</label>
-							<input type="date" name="date" id="date" />
+							<input type="date" name="date" id="date" class="required date"/>
 						</div>
 
 						<div data-role="fieldcontain">
 							<label>Current Time:</label>
-							<input type="time" name="currentTime" id="currentTime" />
+							<input type="time" name="currentTime" id="currentTime" class="required" />
 						</div>
 
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup" data-type="horizontal">
 								<legend>Gender:</legend>
-								<input type="radio" value="Male" name="gender" id="male" />
+								<input type="radio" value="Male" name="gender" id="male" class="required" />
 								<label for="male">Male</label>
 								<input type="radio" value="Female" name="gender" id="female" />
 								<label for="female">Female</label>
@@ -408,7 +408,7 @@
 						<div data-role="fieldcontain">
 							<label for="treatment">Treatment Method Used</label>
 
-							<select name="treatment" id="treatment" data-native-menu="false">
+							<select name="treatment" id="treatment" data-native-menu="false" class="required">
 								<option data-placeholder="true">Choose Treatment Type</option>
 								<option value="Pills">Pills</option>
 								<option value="Insulin">Insulin</option>
@@ -446,7 +446,8 @@
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
-		<script type="text/javascript" src="js/form.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!--<script type="text/javascript" src="js/form.js"></script>-->
 
 	</body>
 </html>
