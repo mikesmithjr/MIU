@@ -1,6 +1,6 @@
 $(document).bind('pageinit', function(){
 
-	var logitemform = $("#addLogForm");
+	var logitemform = $("#addLogItem");
 
 	logitemform.validate();
 
