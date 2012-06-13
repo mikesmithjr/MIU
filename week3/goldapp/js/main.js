@@ -4,6 +4,10 @@ $(document).bind('pageinit', function(){
 
 	logitemform.validate();
 
+
+});
+
+/*
 	//Display the data from local storage to screen
 	function getData(){
 		toggleControls("on");
@@ -126,7 +130,4 @@ $(document).bind('pageinit', function(){
 			window.location.reload();
 			return false;
 		}
-	}
-
-});
-
+	}*/
