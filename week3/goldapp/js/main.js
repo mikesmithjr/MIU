@@ -1,16 +1,32 @@
+var parseLogItemForm = function(data){
+	// uses form data here;
+	console.log(data);
+}
+
+
+
 $(document).bind('pageinit', function(){
 
 	var logitemform = $("#addLogItem");
 
-	logitemform.validate();
+	logitemform.validate({
+		invalidHandler: function(form, validator){},
+		submitHandler: function(){
+			var data = logitemform.serializeArray();
+			parseLogItemForm(data);
+		}
+	});
 
+	//getElementByID Function
+	var ge = function (x) {
+		var theElement = document.getElementById(x);
+		return theElement;
+	};
 
-});
+		
 
-/*
 	//Display the data from local storage to screen
-	function getData(){
-		toggleControls("on");
+	var getData = function(){
 		if(localStorage.length === 0){
 			alert("There is no data in Local Storage so default data was added.");
 			autoFillData();
@@ -45,7 +61,8 @@ $(document).bind('pageinit', function(){
 			makeItemLinks(localStorage.key(i), linksLi);//Create edit and delete links for each item in local storage.
 		}
 	}
-
+});
+/*
 	//Function to create the edit and delete item links for each item in local storage.
 	function makeItemLinks(key, linksLi) {
 		//add edit single item link

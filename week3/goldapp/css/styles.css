@@ -29,6 +29,12 @@ nav{
 	border: 1px solid black;
 	text-align: center;
 }
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: red;
+}
 /*.button{
 	width: 350px; height: 44px;
 	border: 1px solid #000;
