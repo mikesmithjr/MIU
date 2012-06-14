@@ -86,8 +86,8 @@ $(document).bind('pageinit', function(){
 				radios[i].setAttribute("checked", "checked");
 			}else if(radios[i].value == "Female" && logItem.sex[1] == "Female"){
 				radios[i].setAttribute("checked", "checked");
-			}
-		}
+			};
+		};
 		ge("condition").value = logItem.condition[1];
 		ge("treatments").value = logItem.treatments[1];
 		ge("comments").value = logItem.comments[1];
