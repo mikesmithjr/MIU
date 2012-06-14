@@ -32,31 +32,25 @@ $(document).bind('pageinit', function(){
 			autoFillData();
 		}
 		//Write Data from Local Storage to the browser
-		var makeDiv = document.createElement("div");
-		makeDiv.setAttribute("id", "logItems");
-		var makeList = document.createElement("ul");
-		makeList.setAttribute("id", "logEntry");
-		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
-		ge("logItems").style.display = "block";
+		$("#logitemList").empty();
+		//Making list items
 		for(var i=0, len=localStorage.length; i<len;i++){
-			var makeli = document.createElement("li");
-			makeli.setAttribute("id", "logItem");
-			var linksLi = document.createElement("li");
-			makeList.appendChild(makeli);
+			var makeli = $("<li id='listItem"+i+"'></li>");
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Converting string from local storage value back to an object using JSON.parse()
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement("ul");
-			makeli.appendChild(makeSubList);
-			getImage(obj.treatments[1], makeSubList);
-			for(var n in obj){
-				var makeSubli = document.createElement("li");
-				makeSubList.appendChild(makeSubli);
-				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubList.appendChild(linksLi);
+			//create log item list
+			var optSubText = $( "img src='images/"+logItem.treatments[1]+".jpg'/>"+
+				"<h3>"+logItem.date[1]+"</h3>"+
+				"<h3>"+logItem.currentTime[1]+"</h3>"+
+				"<p>"+logItem.fname[0]+": "+logItem.fname[1]+"</p>"+
+				"<p>"+logItem.lname[0]+": "+logItem.lname[1]+"</p>"+
+				"<p>"+logItem.bsreading[0]+": "+logItem.bsreading[1]+"</p>"+
+				"<p>"+logItem.sex[0]+": "+logItem.sex[1]+"</p>"+
+				"<p>"+logItem.condition[0]+": "+logItem.condition[1]+"</p>"+
+				"<p>"+logItem.treatments[0]+": "+logItem.treatments[1]+"</p>"+
+				"<p>"+logItem.comments[0]+": "+logItem.comments[1]+"</p>");
 			}
 			makeItemLinks(localStorage.key(i), linksLi);//Create edit and delete links for each item in local storage.
 		}
