@@ -353,6 +353,7 @@
 	<div data-role="page" id="addLogForm" data-add-back-btn="true">
 			<div data-role="header" data-position="fixed">
 				<h1>Add Log Item</h1>
+				<a href='#list' id="displayLog" data-icon="check" class="ui-btn-right">Display Log</a>
 			</div>
 			
 				
@@ -408,7 +409,7 @@
 						<div data-role="fieldcontain">
 							<label for="treatment">Treatment Method Used</label>
 
-							<select name="treatment" id="treatment" data-native-menu="false" class="required">
+							<select name="treatments" id="treatments" data-native-menu="false" class="required">
 								<option data-placeholder="true">Choose Treatment Type</option>
 								<option value="Pills">Pills</option>
 								<option value="Insulin">Insulin</option>
@@ -445,7 +446,7 @@
 			<!-- Header -->
 			<div data-role="header" data-position="fixed">
 				<h1>Log Items</h1>
-				<a href="#add" id="clearData" data-icon="delete" class="ui-btn-right">Clear List </a>
+				<a href="#add" id="clear" data-icon="delete" class="ui-btn-right">Clear List </a>
 			</div>
 			<!-- Content -->
 			<div data-role="content" id="listContent">
