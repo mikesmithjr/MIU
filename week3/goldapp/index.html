@@ -440,6 +440,30 @@
 		</div>
 	</div>
 
+	<!-- List Page -->
+		<div data-role="page" id="list" data-theme="e" data-add-back-btn="true">
+			<!-- Header -->
+			<div data-role="header" data-position="fixed">
+				<h1>Log Items</h1>
+				<a href="#add" id="clearData" data-icon="delete" class="ui-btn-right">Clear List </a>
+			</div>
+			<!-- Content -->
+			<div data-role="content" id="listContent">
+				<!-- Item list generated via JS -->
+				<ul data-role="listview" id="logitemList" data-split-icon="delete" data-filter="true">
+				</ul>
+			</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="http://mikesmithjr.github.com/MIU/week3/bronzeapp/index.html" data-icon="info">Bronze App</a></li>
+					<li><a href="http://mikesmithjr.github.com/MIU/week3/goldapp/index.html" data-icon="grid">Gold App</a></li>
+				</ul>
+			</div>		
+		</div>
+
 
 	
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
