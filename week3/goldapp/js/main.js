@@ -135,6 +135,7 @@ $(document).bind('pageinit', function(){
 				alert("Log items not deleted.");
 			};
 		};
+		$("#logitemList").listview('refresh');
 	};
 
 
