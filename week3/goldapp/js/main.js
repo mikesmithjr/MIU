@@ -70,31 +70,24 @@ $(document).bind('pageinit', function(){
 	};
 
 	//edit single item
-	var editItem =function() {
+	var editItem =function(id) {
 		//grab the data from our item in local storage
-		var value = localStorage.getItem(this.key);
-		var logItem = JSON.parse(value);
+		var key = parseInt(id.match(/\d+/g));
+		var logItem = JSON.parse(localStorage.getItem(key));
 		//Populate the form with current local storage values.
 		ge("fname").value = logItem.fname[1];
 		ge("lname").value = logItem.lname[1];
 		ge("date").value = logItem.date[1];
 		ge("currentTime").value = logItem.currentTime[1];
 		ge("bsreading").value = logItem.bsreading[1];
-		var radios = document.forms[0].sex;
-		for(var i=0; i<radios.length; i++) {
-			if(radios[i].value == "Male" && logItem.sex[1] == "Male"){
-				radios[i].setAttribute("checked", "checked");
-			}else if(radios[i].value == "Female" && logItem.sex[1] == "Female"){
-				radios[i].setAttribute("checked", "checked");
-			};
-		};
+		/*ge("sex").value = logItem.sex[1];*/
 		ge("condition").value = logItem.condition[1];
 		ge("treatments").value = logItem.treatments[1];
-		ge("comments").value = logItem.comments[1];
+		/*ge("comments").value = logItem.comments[1];*/
 		//Change submit button value to edit button
 		$("span.ui-controlgroup-last").html("Edit Log Item");
 		//Save the key value established in this vunction as a property of #addLogItem
-		$("#addLogItem").attr("key", key);
+	/*	$("#submit").attr("key", key);*/
 		//Refresh the menu
 		$("select#treatment").selectmenu("refresh");
 	};
