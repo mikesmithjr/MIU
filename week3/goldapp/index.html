@@ -365,13 +365,15 @@
 					
 					<form action="" method="post" id="addLogItem">
 
+						<p>*Required Field</p>
+
 						<div data-role="fieldcontain">
-							<label>First Name:</label>
+							<label>*First Name:</label>
 							<input type="text" name="fname" id="fname" class="required"/>
 						</div>
 
 						<div data-role="fieldcontain">
-							<label>Last Name:</label>
+							<label>*Last Name:</label>
 							<input type="text" name="lname" id="lname" class="required"/>
 						</div>
 
@@ -382,18 +384,18 @@
 						</div>
 
 						<div data-role="fieldcontain">
-							<label>Today's Date</label>
-							<input type="date" name="date" id="date" class="required date"/>
+							<label>*Today's Date</label>
+							<input type="date" name="date" id="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date"/>
 						</div>
 
 						<div data-role="fieldcontain">
-							<label>Current Time:</label>
+							<label>*Current Time:</label>
 							<input type="time" name="currentTime" id="currentTime" class="required" />
 						</div>
 
 						<div data-role="fieldcontain">
 							<fieldset data-role="controlgroup">
-								<legend>Gender:</legend>
+								<legend>*Gender:</legend>
 								<input type="radio" value="Male" name="sex" id="male" class="required" />
 								<label for="male">Male</label>
 								<input type="radio" value="Female" name="sex" id="female" />
@@ -407,7 +409,7 @@
 						</div>
 
 						<div data-role="fieldcontain">
-							<label for="treatment">Treatment Method Used</label>
+							<label for="treatment">*Treatment Method Used</label>
 
 							<select name="treatments" id="treatments" data-native-menu="false" class="required">
 								<option data-placeholder="true">Choose Treatment Type</option>
@@ -467,8 +469,10 @@
 		</div>
 
 
-	
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
