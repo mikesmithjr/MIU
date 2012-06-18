@@ -13,7 +13,7 @@ $(document).bind('pageinit', function(){
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
 			
-			storedata(this.key);
+			storedata(this.id);
 		}
 	});
 
