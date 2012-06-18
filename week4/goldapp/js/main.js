@@ -1,6 +1,6 @@
 var parseLogItemForm = function(data){
 	// uses form data here;
-	console.log(data);
+	storeData(data);
 };
 
 
@@ -21,6 +21,43 @@ $(document).bind('pageinit', function(){
 	var ge = function (x) {
 		var theElement = document.getElementById(x);
 		return theElement;
+	};
+
+	var getSelectedRadio = function(){
+		var radios = document.forms[0].sex;
+		for(var i=0; i<radios.length; i++){
+			if(radios[i].checked){
+				sexValue = radios[i].value;
+			}
+		}
+	};
+
+	var storeData = function(key){
+		//if there is no key , this is a new item and needs a key
+		if(!key){
+		var id = Math.floor(Math.random()*100000001);
+		}else{
+			//Set the id to the existing key we're editing so that it will save over the data.
+			//The key is the same key that's been passed along from the editSubmit event handler
+			//to the validate function, and then passed here.
+			id = key;
+		}
+		//Get Form Data and store in object
+		//Object properties contain array with form label and input value.
+		getSelectedRadio();
+		var logItem = {};
+			logItem.fname = ["First Name:", ge("fname").value];
+			logItem.lname = ["Last Name:", ge("lname").value];
+			logItem.date = ["Today's Date:", ge("date").value];
+			logItem.currentTime = ["Current Time:", ge("currentTime").value];
+			logItem.bsreading = ["Blood Sugar Reading:", ge("bsreading").value];
+			logItem.sex = ["Male or Female:", sexValue];
+			logItem.condition = ["Condition:", ge("condition").value];
+			logItem.treatments = ["Current Treatment:", ge("treatments").value];
+			logItem.comments = ["Comments:", ge("comments").value];
+		//Saving data into local storage using Stringify
+		localStorage.setItem(id, JSON.stringify(logItem));
+		alert("Log Saved!");
 	};
 
 		
@@ -131,18 +168,11 @@ $(document).bind('pageinit', function(){
 	
 	};
 
-
-	//Set Link and Submint Click Events
-	var displayLink = ge("displayLog");
-	displayLink.addEventListener("click", getData);
-
-	var clearLink = ge("clear");
-	clearLink.addEventListener("click", clearData);
-	
-/*	var submitLink = ge("submit");
-	submitLink.addEventListener("click", validate);*/
-
 });
+
+("#displayLog").bind("click", getData);
+("clear").bind("click", clearData);
+("submit").bind("click", storeData);
 /*
 	
 	
