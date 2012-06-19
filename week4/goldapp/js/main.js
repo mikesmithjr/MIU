@@ -7,14 +7,13 @@ var parseLogItemForm = function(data){
 
 $(document).bind('pageinit', function(){
 
-	var logitemform = $("#addLogItem");
+	
 
-	logitemform.validate({
+	$("#addLogItem").validate({
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
-			var data = $("#addLogItem").serializeArray();
-			localStorage.setItem("formdata", data);
-			storedata(this.id);
+			/*localStorage.setItem('formdata', this.serializeArray());*/
+			storeData(this.id);
 		}
 	});
 
@@ -24,14 +23,14 @@ $(document).bind('pageinit', function(){
 		return theElement;
 	};
 
-	var getSelectedRadio = function(){
+	/*var getSelectedRadio = function(){
 		var radios = document.forms[0].sex;
 		for(var i=0; i<radios.length; i++){
 			if(radios[i].checked){
 				sexValue = radios[i].value;
 			}
 		}
-	};
+	};*/
 
 	var storeData = function(key){
 		//if there is no key , this is a new item and needs a key
@@ -45,17 +44,17 @@ $(document).bind('pageinit', function(){
 		}
 		//Get Form Data and store in object
 		//Object properties contain array with form label and input value.
-		getSelectedRadio();
+		
 		var logItem = {};
-			logItem.fname = ["First Name:", ge("fname").value];
-			logItem.lname = ["Last Name:", ge("lname").value];
-			logItem.date = ["Today's Date:", ge("date").value];
-			logItem.currentTime = ["Current Time:", ge("currentTime").value];
-			logItem.bsreading = ["Blood Sugar Reading:", ge("bsreading").value];
-			logItem.sex = ["Male or Female:", sexValue];
-			logItem.condition = ["Condition:", ge("condition").value];
-			logItem.treatments = ["Current Treatment:", ge("treatments").value];
-			logItem.comments = ["Comments:", ge("comments").value];
+			logItem.fname = ["First Name:", $("#fname").val()];
+			logItem.lname = ["Last Name:", $("#lname").val()];
+			logItem.date = ["Today's Date:", $("#date").val()];
+			logItem.currentTime = ["Current Time:", $("#currentTime").val()];
+			logItem.bsreading = ["Blood Sugar Reading:", $("#bsreading").val()];
+			logItem.sex = ["Male or Female:", $('input[name="sex"]:checked', '#addLogItem').val()];
+			logItem.condition = ["Condition:", $("#condition").val()];
+			logItem.treatments = ["Current Treatment:", $("#treatments").val()];
+			logItem.comments = ["Comments:", $("#comments").val()];
 		//Saving data into local storage using Stringify
 		localStorage.setItem(id, JSON.stringify(logItem));
 		alert("Log Saved!");
@@ -113,15 +112,15 @@ $(document).bind('pageinit', function(){
 		var key = parseInt(id.match(/\d+/g));
 		var logItem = JSON.parse(localStorage.getItem(key));
 		//Populate the form with current local storage values.
-		ge("fname").value = logItem.fname[1];
-		ge("lname").value = logItem.lname[1];
-		ge("date").value = logItem.date[1];
-		ge("currentTime").value = logItem.currentTime[1];
-		ge("bsreading").value = logItem.bsreading[1];
-		ge("sex").value = logItem.sex[1];
-		ge("condition").value = logItem.condition[1];
-		ge("treatments").value = logItem.treatments[1];
-		ge("comments").value = logItem.comments[1];
+		$("#fname").val() = logItem.fname[1];
+		$("#lname").val() = logItem.lname[1];
+		$("#date").val() = logItem.date[1];
+		$("#currentTime").val() = logItem.currentTime[1];
+		$("#bsreading").val() = logItem.bsreading[1];
+		$("#sex").val() = logItem.sex[1];
+		$("#condition").val() = logItem.condition[1];
+		$("#treatments").val() = logItem.treatments[1];
+		$("#comments").val() = logItem.comments[1];
 		//Change submit button value to edit button
 		$("span.ui-controlgroup-last").html("Edit Log Item");
 		//Save the key value established in this vunction as a property of #addLogItem
@@ -167,15 +166,11 @@ $(document).bind('pageinit', function(){
 				alert("Log items not deleted.");
 			};
 		};
-	$("logitemList").listview("refresh");
+	
 	};
-//Set Link and Submint Click Events
-	var displayLink = ge("displayLog");
-	displayLink.addEventListener("click", getData);
-	var clearLink = ge("clear");
-	clearLink.addEventListener("click", clearData);
-	var submitLink = ge("submit");
-	submitLink.addEventListener("click", storeData);
+$("#displayLog").bind("click", getData);
+$("#clear").bind("click", clearData);
+$("#submit").bind("click", storeData);
 
 
 });
