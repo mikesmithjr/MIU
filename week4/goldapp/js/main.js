@@ -12,7 +12,8 @@ $(document).bind('pageinit', function(){
 	logitemform.validate({
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
-			
+			var data = $("#addLogItem").serializeArray();
+			localStorage.setItem("formdata", data);
 			storedata(this.id);
 		}
 	});
@@ -117,16 +118,17 @@ $(document).bind('pageinit', function(){
 		ge("date").value = logItem.date[1];
 		ge("currentTime").value = logItem.currentTime[1];
 		ge("bsreading").value = logItem.bsreading[1];
-		/*ge("sex").value = logItem.sex[1];*/
+		ge("sex").value = logItem.sex[1];
 		ge("condition").value = logItem.condition[1];
 		ge("treatments").value = logItem.treatments[1];
-		/*ge("comments").value = logItem.comments[1];*/
+		ge("comments").value = logItem.comments[1];
 		//Change submit button value to edit button
 		$("span.ui-controlgroup-last").html("Edit Log Item");
 		//Save the key value established in this vunction as a property of #addLogItem
-	/*	$("#submit").attr("key", key);*/
+		$("#submit").attr("key", key);
 		//Refresh the menu
 		$("select#treatment").selectmenu("refresh");
+		$("logitemList").listview("refresh");
 	};
 	
 	var deleteItem = function(){
@@ -165,11 +167,15 @@ $(document).bind('pageinit', function(){
 				alert("Log items not deleted.");
 			};
 		};
-	
+	$("logitemList").listview("refresh");
 	};
-/*("#displayLog").bind("click", getData);
-("clear").bind("click", clearData);
-("submit").bind("click", storeData);*/
+//Set Link and Submint Click Events
+	var displayLink = ge("displayLog");
+	displayLink.addEventListener("click", getData);
+	var clearLink = ge("clear");
+	clearLink.addEventListener("click", clearData);
+	var submitLink = ge("submit");
+	submitLink.addEventListener("click", storeData);
 
 
 });
