@@ -1,6 +1,6 @@
 var parseLogItemForm = function(data){
 	// uses form data here;
-	storeData(data);
+	consol.log(data);
 };
 
 
@@ -12,8 +12,8 @@ $(document).bind('pageinit', function(){
 	logitemform.validate({
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
-			var data = logitemform.serializeArray();
-			parseLogItemForm(data);
+			
+			storedata(this.id);
 		}
 	});
 
@@ -167,14 +167,14 @@ $(document).bind('pageinit', function(){
 		};
 	
 	};
+/*("#displayLog").bind("click", getData);
+("clear").bind("click", clearData);
+("submit").bind("click", storeData);*/
+
 
 });
 
-("#displayLog").bind("click", getData);
-("clear").bind("click", clearData);
-("submit").bind("click", storeData);
-/*
+
 	
 	
 	
-	*/
