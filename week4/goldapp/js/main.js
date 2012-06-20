@@ -161,6 +161,7 @@ $(document).bind('pageinit', function(){
 			if(ask){
 				localStorage.clear();
 				alert("All log items are deleted!");
+				$("#logitemList").empty();
 				return false;
 			}else{
 				alert("Log items not deleted.");
