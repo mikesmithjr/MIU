@@ -121,7 +121,7 @@ $(document).bind('pageinit', function(){
 		$("#treatments").val(logItem.treatments[1]).selectmenu("refresh");
 		$("#comments").val(logItem.comments[1]);
 		//Change submit button value to edit button
-		$("input#submit").attr("value", "Edit Log Item");
+		$("#formSubmitButton").val("Edit Log Item");
 		//Save the key value established in this vunction as a property of #addLogItem
 		$("#submit").attr("key", key);
 		//Refresh the menu
@@ -159,12 +159,13 @@ $(document).bind('pageinit', function(){
 			if(ask){
 				localStorage.clear();
 				alert("All log items are deleted!");
+				$("#logitemList").empty();
 				return false;
 			}else{
 				alert("Log items not deleted.");
 			};
 		};
-	$("#logitemList").listview('refresh');
+	$("#list").listview('refresh');
 	};
 $("#displayLog").bind("click", getData);
 $("#clear").bind("click", clearData);
