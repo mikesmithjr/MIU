@@ -1,5 +1,5 @@
 /*
-Project 3 Gold App
+Project 4 Gold App
 MIU Term 1206
 Michael Smith Jr.
 The Diabetic's Log
@@ -9,17 +9,34 @@ The Diabetic's Log
 
 /*a:hover{color:green; outline: 1px dotted red;}*/
 
-body{
-	background: lightblue;
+/*body{
+	
+	background-image: url(images/narowstripe.gif);
+	visibility: visible;
+	width: 100%;
+	height: 100%;
 }
-.ui-page{
-	background: lightblue;
+.ui-body{
+
+	background-image: url(images/narowstripe.gif);
+	visibility: visible;
+	width: 100%;
+	height: 100%;
+	background-image: -webkit-radial-gradient(6% 12%, ellipse farthest-corner, rgba(171, 171, 171, 0.3), #0000ff 21%,#0d27d4 26%,#3872d6 35%,rgba(20, 153, 255, 0.8) 59%);
+	background-image: -webkit-radial-gradient(6% 12%, ellipse farthest-corner, rgba(247, 247, 247, 0.3), #0000ff 21%,#0d27d4 -21%,#3872d6 50%,rgba(20, 153, 255, 0.7) 59%);
+}*/
+
+.ui-page {
+    background: url("images/texture.png");
+    background-repeat: repeat;
 }
+
 
 .feature{
 	/*margin: 10px 0px 10px 0px;*/
 	text-align: center;
 }
+
 
 nav{
 	background: white;
@@ -92,7 +109,13 @@ label.error{
 	font-family: Helvetica, sans-serif;
 	text-shadow: 1px 1px black;
 }*/
-
+.ui-body-c, .ui-overlay-c {
+	color: black;
+	text-shadow: 0 1px 0 grey;
+}
+#brief{
+	text-align: center;
+}
 #questions{
 	background: lightblue;
 	list-style: none;
@@ -135,9 +158,7 @@ label{
 	text-align: center;
 
 }
-#brief{
-	text-align: center;
-}
+
 
 
 

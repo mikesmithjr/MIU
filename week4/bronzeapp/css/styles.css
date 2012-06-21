@@ -1,5 +1,5 @@
 /*
-Project 3 Bronze App
+Project 4 Bronze App
 MIU Term 1206
 Michael Smith Jr.
 The Diabetic's Log
@@ -10,10 +10,10 @@ The Diabetic's Log
 /*a:hover{color:green; outline: 1px dotted red;}*/
 
 body{
-	background: lightblue;
+	background-image: -webkit-linear-gradient(bottom, #12BEFC 47%, #0412B5 80%);
 }
 .ui-page{
-	background: lightblue;
+	background-image: -webkit-linear-gradient(bottom, #12BEFC 47%, #0412B5 80%);
 }
 
 .feature{
@@ -87,6 +87,15 @@ nav{
 	text-shadow: 1px 1px black;
 }*/
 
+legend{
+	color: white;
+}
+
+#brief{
+	color: white;
+	text-align: center;
+}
+
 #questions{
 	background: lightblue;
 	list-style: none;
@@ -129,9 +138,7 @@ label{
 	text-align: center;
 
 }
-#brief{
-	text-align: center;
-}
+
 
 
 
