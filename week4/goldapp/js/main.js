@@ -170,7 +170,7 @@ $(document).bind('pageinit', function(){
 $("#displayLog").bind("click", getData);
 $("#clear").bind("click", clearData);
 $("#submit").bind("click", storeData);
-
+$("#news").bind("click", getData);
 
 });
 
