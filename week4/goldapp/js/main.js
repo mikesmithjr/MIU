@@ -72,7 +72,9 @@ $(document).bind('pageinit', function(){
 		$("#logitemList").empty();
 		//Making list items
 		for(var i=0, len=localStorage.length; i<len;i++){
+			var makeli = $("<li id='listItem"+i+"'></li>");
 			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
 			//Converting string from local storage value back to an object using JSON.parse()
 			var obj = JSON.parse(localStorage.getItem(key));
 			var makeli = $("<li id='listItem"+i+"'></li>");
@@ -126,6 +128,7 @@ $(document).bind('pageinit', function(){
 		$("#submit").attr("key", key);
 		//Refresh the menu
 		$("#logitemList").listview("refresh");
+		$("logitemList").listview("refresh");
 	};
 	
 	var deleteItem = function(){
