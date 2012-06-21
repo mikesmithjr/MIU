@@ -72,11 +72,10 @@ $(document).bind('pageinit', function(){
 		$("#logitemList").empty();
 		//Making list items
 		for(var i=0, len=localStorage.length; i<len;i++){
-			var makeli = $("<li id='listItem"+i+"'></li>");
 			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
 			//Converting string from local storage value back to an object using JSON.parse()
-			var obj = JSON.parse(value);
+			var obj = JSON.parse(localStorage.getItem(key));
+			var makeli = $("<li id='listItem"+i+"'></li>");
 			//create log item list
 			var optSubText = $( "<img src='images/"+obj.treatments[1]+".jpg'/>"+
 				"<h3>"+obj.date[1]+"</h3>"+
@@ -90,20 +89,20 @@ $(document).bind('pageinit', function(){
 				"<p>"+obj.comments[0]+" "+obj.comments[1]+"</p>");
 			//Creating Edit Link in Item
 			var editLink = $("<a href='#add' id='edit"+key+"'> Edit Log Item</a>");
-				editLink.bind('click', function(){
+				editLink.on('click', function(){
 					editItem(this.id);
 				});
 			//Creating Delete Link in Item
 			var deleteLink = $("<a href='#list' id='delete"+key+"'>Delete Item</a>");
-				deleteLink.bind('click', function(){
+				deleteLink.on('click', function(){
 					deleteItem(this.id);
 				});
 			//Make item data the edit link
 			editLink.html(optSubText);
 			//Adding edit and delete links to the list
 			makeli.append(editLink, deleteLink).appendTo("#logitemList");
-			}
-	$("#logitemList").listview('refresh');			
+			};
+		$("ul").listview('refresh');			
 	};
 
 	//edit single item
@@ -112,22 +111,21 @@ $(document).bind('pageinit', function(){
 		var key = parseInt(id.match(/\d+/g));
 		var logItem = JSON.parse(localStorage.getItem(key));
 		//Populate the form with current local storage values.
-		$("#fname").val() = logItem.fname[1];
-		$("#lname").val() = logItem.lname[1];
-		$("#date").val() = logItem.date[1];
-		$("#currentTime").val() = logItem.currentTime[1];
-		$("#bsreading").val() = logItem.bsreading[1];
-		$("#sex").val() = logItem.sex[1];
-		$("#condition").val() = logItem.condition[1];
-		$("#treatments").val() = logItem.treatments[1];
-		$("#comments").val() = logItem.comments[1];
+		$("#fname").val(logItem.fname[1]);
+		$("#lname").val(logItem.lname[1]);
+		$("#date").val(logItem.date[1]);
+		$("#currentTime").val(logItem.currentTime[1]);
+		$("#bsreading").val(logItem.bsreading[1]);
+		$('input#' + logItem.sex[1].toLowerCase()).attr('checked', true).checkboxradio('refresh');
+		$("#condition").val(logItem.condition[1]);
+		$("#treatments").val(logItem.treatments[1]).selectmenu("refresh");
+		$("#comments").val(logItem.comments[1]);
 		//Change submit button value to edit button
-		$("span.ui-controlgroup-last").html("Edit Log Item");
+		$("#formSubmitButton").val("Edit Log Item");
 		//Save the key value established in this vunction as a property of #addLogItem
 		$("#submit").attr("key", key);
 		//Refresh the menu
-		$("select#treatment").selectmenu("refresh");
-		$("logitemList").listview("refresh");
+		$("#logitemList").listview("refresh");
 	};
 	
 	var deleteItem = function(){
@@ -167,7 +165,7 @@ $(document).bind('pageinit', function(){
 				alert("Log items not deleted.");
 			};
 		};
-	
+	$("#list").listview('refresh');
 	};
 $("#displayLog").bind("click", getData);
 $("#clear").bind("click", clearData);
